@@ -7,7 +7,29 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: peachpuff; /* Set the background color to peach */
+            background-image: url('image.png'); /* Replace with your actual image URL */
+            background-size: cover; /* Ensure the image covers the full background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-attachment: fixed; /* Fix the background image to the viewport */
+            text-align: center; /* Center aligns all the text in the body */
+            font-size: larger; /* Increases the font size for all text */
+        }
+ 
+        input[type="text"], input[type="email"], select {
+            width: 50%; /* Set the width of the input fields */
+            padding: 10px; /* Add some padding for better visual appeal */
+            margin: 10px 0; /* Add margin for spacing around the fields */
+            font-size: 1.2em; /* Increase the font size in the input fields */
+        }
+ 
+        button {
+            padding: 10px 20px; /* Padding inside the button */
+            font-size: 1.2em; /* Increase the font size of the button text */
+        }
+ 
+        table {
+            margin: 0 auto; /* Center align the tables */
         }
     </style>
 </head>
@@ -26,17 +48,17 @@
             Menu Type:
             <select id="menuOption" onchange="selectMenu()">
                 <option value="">Choose a Meal</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
+                <option value="Appetizers">Appetizers</option>
+                <option value="Suya Meats">Suya Meats</option>
+                <option value="Infused Plates">Infused Plates</option>
                 <option value="desserts">Desserts</option>
                 <option value="beverages">Beverages</option>
             </select><br><br>
             <!-- Meal Options -->
-            <div id="meal_breakfast" style="display: none;">
+            <div id="meal_Appetizers" style="display: none;">
                 <table class="menu_option">
                     <tr data-price="11.99">
-                        <td>Custom Waffles:</td>
+                        <td>Suya Wings:</td>
                         <td>$11.99</td>
                         <td>
                             <button onclick="changeQuantity(event, this, -1)">-</button>
@@ -46,48 +68,7 @@
                         </td>
                     </tr>
                     <tr data-price="9.79">
-                        <td>Bacon and Eggs:</td>
-                        <td>$9.79</td>
-                        <td>
-                            <button onclick="changeQuantity(event, this, -1)">-</button>
-                            <span class="quantity_value">0</span>
-                            <button onclick="changeQuantity(event, this, 1)">+</button>
-                        </td>
-                    </tr>
-                    <tr data-price="10.00">
-                        <td>Custom Pancakes:</td>
-                        <td>$10.00</td>
-                        <td>
-                            <button onclick="changeQuantity(event, this, -1)">-</button>
-                            <span class="quantity_value">0</span>
-                            <button onclick="changeQuantity(event, this, 1)">+</button><br>
-                            <input type="text" placeholder="Please customize item">
-                        </td>
-                    </tr>
-                    <tr data-price="9.99">
-                        <td>Avocado Toast:</td>
-                        <td>$9.99</td>
-                        <td>
-                            <button onclick="changeQuantity(event, this, -1)">-</button>
-                            <span class="quantity_value">0</span>
-                            <button onclick="changeQuantity(event, this, 1)">+</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="meal_lunch" style="display: none;">
-                <table class="menu_option">
-                    <tr data-price="12.54">
-                        <td>Classic Burger:</td>
-                        <td>$12.54</td>
-                        <td>
-                            <button onclick="changeQuantity(event, this, -1)">-</button>
-                            <span class="quantity_value">0</span>
-                            <button onclick="changeQuantity(event, this, 1)">+</button>
-                        </td>
-                    </tr>
-                    <tr data-price="6.99">
-                        <td>Vegetarian and Chicken Tacos:</td>
+                        <td>Meat Pie:</td>
                         <td>$6.99</td>
                         <td>
                             <button onclick="changeQuantity(event, this, -1)">-</button>
@@ -96,8 +77,8 @@
                         </td>
                     </tr>
                     <tr data-price="10.00">
-                        <td>Custom Sandwich:</td>
-                        <td>$10.00</td>
+                        <td>Peppered Cow Skin (Pomo):</td>
+                        <td>$13.00</td>
                         <td>
                             <button onclick="changeQuantity(event, this, -1)">-</button>
                             <span class="quantity_value">0</span>
@@ -105,22 +86,126 @@
                             <input type="text" placeholder="Please customize item">
                         </td>
                     </tr>
-                </table>
-            </div>
-            <div id="meal_dinner" style="display: none;">
-                <table class="menu_option">
-                    <tr data-price="18.99">
-                        <td>Steak with Veggies:</td>
-                        <td>$18.99</td>
+                    <tr data-price="9.99">
+                        <td>Turkey Gizzard and Plantains:</td>
+                        <td>$11.99</td>
                         <td>
                             <button onclick="changeQuantity(event, this, -1)">-</button>
                             <span class="quantity_value">0</span>
                             <button onclick="changeQuantity(event, this, 1)">+</button>
                         </td>
                     </tr>
-                    <tr data-price="14.55">
-                        <td>Salmon and Rice:</td>
-                        <td>$14.55</td>
+                </table>
+            </div>
+            <div id="meal_Suya Meats" style="display: none;">
+                <table class="menu_option">
+                    <tr data-price="18.54">
+                        <td>Beef Suya:</td>
+                        <td>$18.54</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="15.99">
+                        <td>Chicken Suya:</td>
+                        <td>$15.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="10.00">
+                        <td>Sampler Suya:</td>
+                        <td>$20.00</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button><br>
+                            <input type="text" placeholder="Please customize item">
+                        </td>
+                    </tr>
+                    <tr data-price="15.99">
+                        <td>Shrimp Suya:</td>
+                        <td>$15.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="22.99">
+                        <td>Goat Suya:</td>
+                        <td>$15.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="15.99">
+                        <td>Chicken Suya:</td>
+                        <td>$15.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="15.99">
+                        <td>Mighty Platter:</td>
+                        <td>$45.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="meal_infused plates" style="display: none;">
+                <table class="menu_option">
+                    <tr data-price="25.99">
+                        <td>Jollof or White rice Plate:</td>
+                        <td>$25.99</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="25.55">
+                        <td>Asun Plate with Jollof and Plantain:</td>
+                        <td>$25.55</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="15.55">
+                        <td>Designer stew with Rice and plantain:</td>
+                        <td>$15.55</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="25.55">
+                        <td>Ram surf and turf:</td>
+                        <td>$25.55</td>
+                        <td>
+                            <button onclick="changeQuantity(event, this, -1)">-</button>
+                            <span class="quantity_value">0</span>
+                            <button onclick="changeQuantity(event, this, 1)">+</button>
+                        </td>
+                    </tr>
+                    <tr data-price="25.55">
+                        <td>Snapper and Fried Yam:</td>
+                        <td>$25.55</td>
                         <td>
                             <button onclick="changeQuantity(event, this, -1)">-</button>
                             <span class="quantity_value">0</span>
@@ -167,18 +252,7 @@
         <button class="sub" type="button" onClick="onSubmit()">Submit</button>
     </form>
     <script src="assign3.js"></script>
-    <footer style="text-align:center; background-color:black;">
-        <p>Would you like to receive messages on our latest deals?</p>
-        <input type="radio" name="r01" value="yes" onClick="message(this.value)">Yes please!
-        <input type="radio" name="r01" value="no" onClick="message(this.value)">No thanks!
-        <p id="p02"><b>Follow the Patel Cafe on:</b>
-            <img src="Images/insta.jpg" style="width: 40px; height: 30px;">
-            <img src="Images/tiktok.jpg" style="width: 40px; height: 30px;">
-        </p>
-        <p id="p03">&copy; The Patel Cafe Co. All rights reserved.</p>
-    </footer>
+    
 </body>
 </html>
  
-has context menu
-Compose
